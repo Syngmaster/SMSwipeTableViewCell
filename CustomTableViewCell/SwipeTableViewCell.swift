@@ -10,10 +10,11 @@ import UIKit
 
 class SwipeTableViewCell: UITableViewCell {
     
-    var panRecognizer: UIPanGestureRecognizer {
+    private var panRecognizer: UIPanGestureRecognizer {
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(panThisCell(recognizer:)))
         return recognizer
     }
+    
     var panStartPoint: CGPoint?
     var startingRightLayoutConstraintConstant: CGFloat?
     @IBOutlet weak var contentViewRightConstraint: NSLayoutConstraint!
@@ -66,4 +67,17 @@ class SwipeTableViewCell: UITableViewCell {
             print("Button 2")
         }
     }
+    
+    private func buttonTotalWidth() -> CGFloat {
+        return self.frame.width - self.button2.frame.minX
+    }
+    
+    func resetConstraintContstantsToZero(animated: Bool, endEditing: Bool) {
+        
+    }
+    
+    func setConstraintsToShowAllButtons(animated: Bool, notifyDelegate: Bool) {
+        
+    }
+
 }
