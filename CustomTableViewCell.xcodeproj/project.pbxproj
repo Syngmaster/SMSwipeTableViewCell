@@ -12,6 +12,7 @@
 		C853733F2080E41F00115AA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C853733D2080E41F00115AA3 /* Main.storyboard */; };
 		C85373412080E42200115AA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C85373402080E42200115AA3 /* Assets.xcassets */; };
 		C85373442080E42200115AA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85373422080E42200115AA3 /* LaunchScreen.storyboard */; };
+		C853734C2080EB6E00115AA3 /* SwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C853734B2080EB6E00115AA3 /* SwipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C85373402080E42200115AA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C85373432080E42200115AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C85373452080E42200115AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C853734B2080EB6E00115AA3 /* SwipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				C85373392080E41F00115AA3 /* AppDelegate.swift */,
 				C853733B2080E41F00115AA3 /* ViewController.swift */,
+				C853734B2080EB6E00115AA3 /* SwipeTableViewCell.swift */,
 				C853733D2080E41F00115AA3 /* Main.storyboard */,
 				C85373402080E42200115AA3 /* Assets.xcassets */,
 				C85373422080E42200115AA3 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C853733C2080E41F00115AA3 /* ViewController.swift in Sources */,
+				C853734C2080EB6E00115AA3 /* SwipeTableViewCell.swift in Sources */,
 				C853733A2080E41F00115AA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

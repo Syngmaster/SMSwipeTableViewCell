@@ -33,14 +33,22 @@ extension ViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else { return UITableViewCell() }
-        cell.textLabel?.text = "Title\(indexPath.row)"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? SwipeTableViewCell else { return UITableViewCell() }
+        cell.label.text = "Title\(indexPath.row)"
         return cell
     }
     
 }
 
 extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
     
 }
 
