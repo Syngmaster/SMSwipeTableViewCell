@@ -34,7 +34,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? SwipeTableViewCell else { return UITableViewCell() }
-        cell.label.text = "Title\(indexPath.row)"
+        cell.label.text = "Longer title - \(indexPath.row)"
         return cell
     }
     
@@ -48,6 +48,11 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return false
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
     }
     
 }
