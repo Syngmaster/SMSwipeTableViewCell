@@ -22,6 +22,18 @@ class SwipeTableViewCell: UITableViewCell {
     @IBOutlet weak var cellMainView: UIView!
     @IBOutlet weak var cellLabel: UILabel!
     
+    var closed: Bool {
+        return __CGPointEqualToPoint(scrollView.contentOffset, .zero)
+    }
+    
+    var leftInset: CGFloat {
+        return 0.0
+    }
+    
+    var rightInset: CGFloat {
+        return 0.0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUp()
@@ -56,5 +68,14 @@ class SwipeTableViewCell: UITableViewCell {
 }
 
 extension SwipeTableViewCell: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (leftInset == 0 && scrollView.contentOffset.x < 0) || (rightInset == 0 && scrollView.contentOffset.x > 0) {
+            scrollView.contentOffset = .zero
+        }
+        
+        
+        
+    }
     
 }
