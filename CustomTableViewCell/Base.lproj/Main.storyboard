@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmm-E6-RhL">
-                                                    <rect key="frame" x="331" y="0.0" width="44" height="43.5"/>
+                                                    <rect key="frame" x="331" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="zKL-uE-7xs"/>
                                                     </constraints>
@@ -41,7 +41,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jq-Xa-ODb">
-                                                    <rect key="frame" x="287" y="0.0" width="44" height="43.5"/>
+                                                    <rect key="frame" x="287" y="0.0" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="Dmi-5J-fNm"/>
                                                     </constraints>
@@ -51,36 +51,49 @@
                                                         <action selector="buttonClicked:" destination="juT-eg-xFo" eventType="touchUpInside" id="COg-uH-aDL"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwk-31-Y2z">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc6-CZ-qSv">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGd-WD-per">
-                                                            <rect key="frame" x="20" y="0.0" width="355" height="44"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0O-tp-S2e">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-Oi-9Bm">
+                                                                    <rect key="frame" x="20" y="0.0" width="355" height="44"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="eMo-Oi-9Bm" secondAttribute="bottom" id="KB3-NV-z5o"/>
+                                                                <constraint firstAttribute="trailing" secondItem="eMo-Oi-9Bm" secondAttribute="trailing" id="N2Z-mz-Msy"/>
+                                                                <constraint firstItem="eMo-Oi-9Bm" firstAttribute="centerY" secondItem="z0O-tp-S2e" secondAttribute="centerY" id="Nwr-ty-occ"/>
+                                                                <constraint firstItem="eMo-Oi-9Bm" firstAttribute="leading" secondItem="z0O-tp-S2e" secondAttribute="leading" constant="20" id="awa-pr-rCB"/>
+                                                                <constraint firstItem="eMo-Oi-9Bm" firstAttribute="top" secondItem="z0O-tp-S2e" secondAttribute="top" id="kxQ-K1-5OV"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.55294117649999996" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="IGd-WD-per" firstAttribute="leading" secondItem="Fwk-31-Y2z" secondAttribute="leading" constant="20" id="4xC-eg-fba"/>
-                                                        <constraint firstItem="IGd-WD-per" firstAttribute="top" secondItem="Fwk-31-Y2z" secondAttribute="top" id="IbC-nX-xVf"/>
-                                                        <constraint firstItem="IGd-WD-per" firstAttribute="centerY" secondItem="Fwk-31-Y2z" secondAttribute="centerY" id="ua8-8z-yOS"/>
-                                                        <constraint firstAttribute="bottom" secondItem="IGd-WD-per" secondAttribute="bottom" id="wqp-F7-nRH"/>
-                                                        <constraint firstAttribute="trailing" secondItem="IGd-WD-per" secondAttribute="trailing" id="yi1-CV-bN4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="z0O-tp-S2e" secondAttribute="bottom" id="1Ut-eU-eIf"/>
+                                                        <constraint firstItem="z0O-tp-S2e" firstAttribute="centerX" secondItem="hc6-CZ-qSv" secondAttribute="centerX" id="6lK-ub-hrz"/>
+                                                        <constraint firstItem="z0O-tp-S2e" firstAttribute="leading" secondItem="hc6-CZ-qSv" secondAttribute="leading" id="Eoa-oL-wGQ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="z0O-tp-S2e" secondAttribute="trailing" id="fV0-MW-9ON"/>
+                                                        <constraint firstItem="z0O-tp-S2e" firstAttribute="top" secondItem="hc6-CZ-qSv" secondAttribute="top" id="pZM-uB-6z5"/>
+                                                        <constraint firstItem="z0O-tp-S2e" firstAttribute="centerY" secondItem="hc6-CZ-qSv" secondAttribute="centerY" id="wC2-Kd-VCc"/>
                                                     </constraints>
-                                                </view>
+                                                </scrollView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6jq-Xa-ODb" firstAttribute="top" secondItem="1qP-Gp-y4U" secondAttribute="top" id="9ge-A2-lbF"/>
-                                                <constraint firstAttribute="bottom" secondItem="Fwk-31-Y2z" secondAttribute="bottom" id="WVo-4R-Q9Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="hc6-CZ-qSv" secondAttribute="bottom" id="QYz-nk-heD"/>
                                                 <constraint firstAttribute="bottom" secondItem="6jq-Xa-ODb" secondAttribute="bottom" id="Whp-BX-bUB"/>
+                                                <constraint firstItem="hc6-CZ-qSv" firstAttribute="leading" secondItem="1qP-Gp-y4U" secondAttribute="leading" id="XKh-9h-AoA"/>
+                                                <constraint firstAttribute="trailing" secondItem="hc6-CZ-qSv" secondAttribute="trailing" id="a4Q-Co-k5E"/>
+                                                <constraint firstItem="hc6-CZ-qSv" firstAttribute="top" secondItem="1qP-Gp-y4U" secondAttribute="top" id="b47-2L-jk5"/>
                                                 <constraint firstItem="bmm-E6-RhL" firstAttribute="centerY" secondItem="1qP-Gp-y4U" secondAttribute="centerY" id="bTC-PN-slG"/>
                                                 <constraint firstItem="bmm-E6-RhL" firstAttribute="leading" secondItem="6jq-Xa-ODb" secondAttribute="trailing" id="cQI-zr-Ptd"/>
                                                 <constraint firstAttribute="trailing" secondItem="bmm-E6-RhL" secondAttribute="trailing" id="dtu-HO-3WP"/>
-                                                <constraint firstItem="Fwk-31-Y2z" firstAttribute="leading" secondItem="1qP-Gp-y4U" secondAttribute="leading" id="isf-K5-Iir"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fwk-31-Y2z" secondAttribute="trailing" id="mwU-ez-Ktd"/>
-                                                <constraint firstItem="Fwk-31-Y2z" firstAttribute="top" secondItem="1qP-Gp-y4U" secondAttribute="top" id="p8Q-Zq-MAA"/>
                                                 <constraint firstAttribute="bottom" secondItem="bmm-E6-RhL" secondAttribute="bottom" id="qEW-ou-gMq"/>
                                                 <constraint firstItem="bmm-E6-RhL" firstAttribute="top" secondItem="1qP-Gp-y4U" secondAttribute="top" id="qqd-qS-wD0"/>
                                                 <constraint firstItem="6jq-Xa-ODb" firstAttribute="centerY" secondItem="1qP-Gp-y4U" secondAttribute="centerY" id="ufe-t7-eWY"/>
@@ -89,11 +102,10 @@
                                         <connections>
                                             <outlet property="button1" destination="bmm-E6-RhL" id="PNS-14-zDQ"/>
                                             <outlet property="button2" destination="6jq-Xa-ODb" id="wvW-Su-Vnj"/>
+                                            <outlet property="cellLabel" destination="eMo-Oi-9Bm" id="ZVz-qf-t8s"/>
+                                            <outlet property="cellMainView" destination="z0O-tp-S2e" id="sWU-Q9-3oB"/>
                                             <outlet property="contentView" destination="1qP-Gp-y4U" id="eY0-vJ-mIN"/>
-                                            <outlet property="contentViewLeftConstraint" destination="isf-K5-Iir" id="GZ8-8N-J4E"/>
-                                            <outlet property="contentViewRightConstraint" destination="mwU-ez-Ktd" id="9Hq-XL-5Am"/>
-                                            <outlet property="label" destination="IGd-WD-per" id="rj4-Qg-yxs"/>
-                                            <outlet property="myContentView" destination="Fwk-31-Y2z" id="kGN-J8-4e7"/>
+                                            <outlet property="scrollView" destination="hc6-CZ-qSv" id="7Dj-CH-Afj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

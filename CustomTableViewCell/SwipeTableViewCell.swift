@@ -6,58 +6,42 @@
 //  Copyright © 2018 Maksim Artemov. All rights reserved.
 //
 
+let kCellCloseEvent = "SwipeableTableViewCellClose"
+
+
 import UIKit
 
 class SwipeTableViewCell: UITableViewCell {
-    
-    private var panRecognizer: UIPanGestureRecognizer {
-        let recognizer = UIPanGestureRecognizer(target: self, action: #selector(panThisCell(recognizer:)))
-        return recognizer
-    }
-    
+
     var panStartPoint: CGPoint?
     var startingRightLayoutConstraintConstant: CGFloat?
-    @IBOutlet weak var contentViewRightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var contentViewLeftConstraint: NSLayoutConstraint!
-
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var myContentView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var cellMainView: UIView!
+    @IBOutlet weak var cellLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        panRecognizer.delegate = self
-        myContentView.addGestureRecognizer(panRecognizer)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        setUp()
     }
     
-    @objc func panThisCell(recognizer: UIPanGestureRecognizer) {
-        
-        switch recognizer.state {
-        case .began:
-            panStartPoint = recognizer.translation(in: myContentView)
-            print("pan began at \(NSStringFromCGPoint(panStartPoint!))")
-        case .changed:
-            let currentPoint = recognizer.translation(in: myContentView)
-            let deltaX = currentPoint.x - panStartPoint!.x
-            print("pan moved \(deltaX))")
-        case .ended:
-            print("pan ended at")
-        case .cancelled:
-            print("pan cancelled")
-        default: break
-        }
-        
-        
+    func setUp() {
+        scrollView.delegate = self
+        scrollView.scrollsToTop = false
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCloseEvent(notification:)), name: NSNotification.Name(rawValue: kCellCloseEvent), object: nil)
     }
+    
+    func close() {
+        scrollView.setContentOffset(.zero, animated: true)
+    }
+    
+    @objc func handleCloseEvent(notification: Notification) {
+        guard (notification.object as? SwipeTableViewCell) != nil else { return }
+        close()
+    }
+
 
     @IBAction func buttonClicked(_ sender: UIButton) {
         
@@ -67,17 +51,10 @@ class SwipeTableViewCell: UITableViewCell {
             print("Button 2")
         }
     }
-    
-    private func buttonTotalWidth() -> CGFloat {
-        return self.frame.width - self.button2.frame.minX
-    }
-    
-    func resetConstraintContstantsToZero(animated: Bool, endEditing: Bool) {
-        
-    }
-    
-    func setConstraintsToShowAllButtons(animated: Bool, notifyDelegate: Bool) {
-        
-    }
 
+
+}
+
+extension SwipeTableViewCell: UIScrollViewDelegate {
+    
 }
